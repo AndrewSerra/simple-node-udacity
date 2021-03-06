@@ -13,7 +13,7 @@ before_script:
 
 script:
   - docker --version
-  - docker build -t simple-node-ci .
+  - docker build -t simple-node-ci --build-arg MISSING=${MISSING} .
   - docker tag simple-node-ci andrewserra/simple-node:latest
 
 after_success:
